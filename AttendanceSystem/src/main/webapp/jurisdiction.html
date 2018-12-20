@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>权限管理</title>
+<link rel="stylesheet" type="text/css"
+	href="easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="easyui/demo/demo.css">
+<link rel="stylesheet" href="layui/css/layui.css">
+<link rel="stylesheet" href="styles/jurisdiction.css">
+<link rel="shortcut icon" 
+           href="images/favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/cookie_util.js"></script>
+<script type="text/javascript"
+	src="http://www.jeasyui.net/Public/js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="scripts/path.js"></script>
+<script src="layui/layui.js"></script>
+</head>
+<script type="text/javascript">
+	function doSearch(value, name) {
+		alert('You input: ' + value + '(' + name + ')');
+	}
+	$(function() {
+		$(".com").load("com.html");
+	});
+	layui.use([ 'laypage', 'layer' ], function() {
+		var laypage = layui.laypage, layer = layui.layer;
+		//总页数大于页码总数
+		laypage.render({
+			elem : 'demo1',
+			count : 708,//数据总数,
+			groups : 4,
+			jump : function(obj) {
+				var str = "第"
+						+ ((obj.curr - 1) * 10 + 1)
+						+ "条到第"
+						+ (obj.curr * 10 > obj.count ? obj.count
+								: obj.curr * 10) + "条，共" + (obj.count) + "条";
+				$("#countRed").text(str);
+			}
+		});
+	});
+</script>
+<body class="layui-layout-body">
+	<div class="com"></div>
+	<div class="pageId">
+		<span class="get_jd" style="color: #0080ff;">权限分配</span>
+	</div>
+	<div class="list_emu">
+		<span class="get_jd" style="color: #00d2d2;">全部列表</span>
+		<div class="search">
+			<input class="easyui-searchbox"
+				data-options="prompt:'输入名字或部门',searcher:doSearch"
+				style="height: 30px; width: 200px" id="search"></input>
+		</div>
+		<hr class="bg">
+	</div>
+	<div class="jd_table">
+		<table class="layui-table table_info" border="1" cellspacing="0">
+			<tr>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>部门</th>
+				<th>操作选项</th>
+			</tr>
+			<tr>
+				<th>吕冠森</th>
+				<th>男</th>
+				<th>技术研发部</th>
+				<th style="width: 500px; height: 30px"><input type="checkbox">员工管理
+					&nbsp&nbsp&nbsp&nbsp&nbsp <input type="checkbox">部门管理&nbsp&nbsp&nbsp&nbsp&nbsp
+					<input type="checkbox">权限管理 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">请假审批 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">数据录入</th>
+			</tr>
+			<tr>
+				<th>吕冠森</th>
+				<th>男</th>
+				<th>技术研发部</th>
+				<th style="width: 500px; height: 30px"><input type="checkbox">员工管理
+					&nbsp&nbsp&nbsp&nbsp&nbsp <input type="checkbox">部门管理&nbsp&nbsp&nbsp&nbsp&nbsp
+					<input type="checkbox">权限管理 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">请假审批 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">数据录入</th>
+			</tr>
+			<tr>
+				<th>吕冠森</th>
+				<th>男</th>
+				<th>技术研发部</th>
+				<th style="width: 500px; height: 30px"><input type="checkbox">员工管理
+					&nbsp&nbsp&nbsp&nbsp&nbsp <input type="checkbox">部门管理&nbsp&nbsp&nbsp&nbsp&nbsp
+					<input type="checkbox">权限管理 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">请假审批 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">数据录入</th>
+			</tr>
+			<tr>
+				<th>吕冠森</th>
+				<th>男</th>
+				<th>技术研发部</th>
+				<th style="width: 500px; height: 30px"><input type="checkbox">员工管理
+					&nbsp&nbsp&nbsp&nbsp&nbsp <input type="checkbox">部门管理&nbsp&nbsp&nbsp&nbsp&nbsp
+					<input type="checkbox">权限管理 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">请假审批 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">数据录入</th>
+			</tr>
+			<tr>
+				<th>吕冠森</th>
+				<th>男</th>
+				<th>技术研发部</th>
+				<th style="width: 500px; height: 30px"><input type="checkbox">员工管理
+					&nbsp&nbsp&nbsp&nbsp&nbsp <input type="checkbox">部门管理&nbsp&nbsp&nbsp&nbsp&nbsp
+					<input type="checkbox">权限管理 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">请假审批 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">数据录入</th>
+			</tr>
+			<tr>
+				<th>吕冠森</th>
+				<th>男</th>
+				<th>技术研发部</th>
+				<th style="width: 500px; height: 30px"><input type="checkbox">员工管理
+					&nbsp&nbsp&nbsp&nbsp&nbsp <input type="checkbox">部门管理&nbsp&nbsp&nbsp&nbsp&nbsp
+					<input type="checkbox">权限管理 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">请假审批 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">数据录入</th>
+			</tr>
+			<tr>
+				<th>吕冠森</th>
+				<th>男</th>
+				<th>技术研发部</th>
+				<th style="width: 500px; height: 30px"><input type="checkbox">员工管理
+					&nbsp&nbsp&nbsp&nbsp&nbsp <input type="checkbox">部门管理&nbsp&nbsp&nbsp&nbsp&nbsp
+					<input type="checkbox">权限管理 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">请假审批 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">数据录入</th>
+			</tr>
+			<tr>
+				<th>吕冠森</th>
+				<th>男</th>
+				<th>技术研发部</th>
+				<th style="width: 500px; height: 30px"><input type="checkbox">员工管理
+					&nbsp&nbsp&nbsp&nbsp&nbsp <input type="checkbox">部门管理&nbsp&nbsp&nbsp&nbsp&nbsp
+					<input type="checkbox">权限管理 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">请假审批 &nbsp&nbsp&nbsp&nbsp&nbsp <input
+					type="checkbox">数据录入</th>
+			</tr>
+		</table>
+	</div>
+	<div class="jd_btn">
+		<button class="layui-btn">分配权限</button>
+		<button class="layui-btn">取消分配</button>
+	</div>
+	<div class="pageing" id="demo1">
+		<fieldset class="layui-elem-field layui-field-title"
+			style="margin-top: 30px;">
+			<legend>总页数大于页码总数</legend>
+		</fieldset>
+	</div>
+	<div class="showCount">
+		<span id="countRed"></span>
+	</div>
+</body>
+</html>
